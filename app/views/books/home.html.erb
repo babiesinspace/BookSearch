@@ -1,0 +1,17 @@
+<h1>Books#home</h1>
+<p>Find me in app/views/books/home.html.erb</p>
+<%= form_tag(books_home_path, method: :get) do %>
+  Query <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<% if @search_results %>
+
+  <% @search_results.each do |book| %>
+    <img src=<%= book["volumeInfo"]["imageLinks"]["thumbnail"] %> alt=<%= book["volumeInfo"]["title"] %>>
+    <h2><%= book["volumeInfo"]["title"] %></h2>
+    <h4><%= book["volumeInfo"]["authors"].join(", ")%></h4>
+    <h5><%= book["volumeInfo"]["publisher"]%></h5>
+    <h5><a href=<%= book["volumeInfo"]["infoLink"]%>>Learn More</a></h5>
+  <% end %>
+<% end %>
