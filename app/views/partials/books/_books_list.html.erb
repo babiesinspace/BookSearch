@@ -1,0 +1,15 @@
+<div id="results-container">
+  <% if @search_results %>
+
+    <% @search_results.each do |book| %>
+      <% img = book["imageLinks"]["thumbnail"] if book["imageLinks"] %>
+      <div>
+        <img class="thumbnail" src=<%= img %> >
+        <h2 class="title"><%= book["title"] %></h2>
+        <h4 class="authors"><%= book["authors"].join(", ") if book["authors"] %></h4>
+        <h5 class="publisher"><%= book["publisher"]%></h5>
+        <h5 class="info-link"><a href=<%= book["infoLink"]%>>Learn More</a></h5>
+      </div>
+    <% end %>
+  <% end %>
+</div>
