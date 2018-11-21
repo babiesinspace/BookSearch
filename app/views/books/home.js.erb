@@ -1,0 +1,19 @@
+function checkForBooks() {
+  if( document.querySelector("#results-container") ) {
+    hideBooks()
+    showBooks()
+  } else {
+    showBooks()
+  }
+}
+
+function showBooks() {
+  let results = document.querySelector("#results")
+  results.innerHTML = "<%= j render 'partials/books/books_list' %>"
+}
+
+function hideBooks() {
+  document.querySelector("#results-container").remove()
+}
+
+document.querySelector('form.form').addEventListener('ajax:success', checkForBooks())
