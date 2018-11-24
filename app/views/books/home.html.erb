@@ -1,8 +1,6 @@
-<h1>Search Books!</h1>
-<p>Type a query below and view results. Click on any result for more info!</p>
-
-
 <section id="search-bar">
+  <h1>Search Books!</h1>
+  <p>Type a query below and view results. Click on any result for more info!</p>
   <div id="search-bar-container">
     <%= form_tag(books_home_path, method: :get, remote: true, class: "form") do %>
       <%= text_field_tag :query, params[:query] %>
