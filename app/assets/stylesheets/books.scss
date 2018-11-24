@@ -38,6 +38,18 @@ body, html {
     div {
       width: 90%;
       margin: 2% auto;
+      cursor: pointer;
+      display: flex;
+      .img-container {
+        flex: 30%;
+        img {
+          margin: auto;
+        }
+      }
+      .book-info-container {
+        display: block;
+        flex: 70%;
+      }
     }
   }
 }
