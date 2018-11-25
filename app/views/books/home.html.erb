@@ -1,11 +1,9 @@
-<h1>Books#home</h1>
-<p>Find me in app/views/books/home.html.erb</p>
-
-
 <section id="search-bar">
+  <h1>Search Books!</h1>
+  <p>Type a query below and view results. Click on any result for more info!</p>
   <div id="search-bar-container">
     <%= form_tag(books_home_path, method: :get, remote: true, class: "form") do %>
-      Query <%= text_field_tag :query, params[:query] %>
+      <%= text_field_tag :query, params[:query] %>
       <%= submit_tag 'Search', name: nil %>
     <% end %>
   </div>

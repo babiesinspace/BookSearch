@@ -1,3 +1,117 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, html {
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  background: rgb(167,255,103);
+  background: -webkit-linear-gradient(left, rgba(167,255,103,1) 0%, rgba(21,216,255,1) 100%);
+  background: -o-linear-gradient(left, rgba(167,255,103,1) 0%, rgba(21,216,255,1) 100%);
+  background: linear-gradient(to right, rgba(167,255,103,1) 0%, rgba(21,216,255,1) 100%);
+  font-family: 'Quicksand', sans-serif;
+}
+
+#search-bar {
+  margin-top: 10%;
+  height: 30%;
+  h1 {
+    height: 25%;
+  }
+  p {
+    height: 25%;
+  }
+  #search-bar-container {
+    height: 25%;
+    margin: 1em 0;
+    form {
+      height: 100%;
+      input {
+        line-height: 2em;
+        font-size: 1em;
+        border-radius: 9999px;
+        outline: 1px solid transparent;
+        &#query {
+          padding: 0 1%;
+        }
+      }
+    }
+  }
+}
+
+#results {
+  height: 70%;
+  #results-container {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    div {
+      flex: 1;
+      width: 80%;
+      margin: 4% auto;
+      cursor: pointer;
+      display: flex;
+      background: #e2e2e2;
+      border-radius: 8% 0%;
+      -webkit-box-shadow: 0px 0px 15px 5px rgba(181, 167, 181, 1);
+      -moz-box-shadow: 0px 0px 15px 5px rgba(181, 167, 181, 1);
+      box-shadow: 0px 0px 15px 5px rgba(181, 167, 181, 1);
+      .img-container {
+        flex: 40%;
+        justify-content: flex-end;
+        box-shadow: none;
+        margin: 4% 6%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .book-info-container {
+        display: block;
+        flex: 60%;
+        box-shadow: none;
+        margin: 4% 1% 4% 0%;
+        h4 {
+          margin: 0 auto;
+          &.title {
+            margin-bottom: 1%;
+            font-style: italic;
+          }
+          &.authors {
+            margin: 1% auto;
+          }
+          &.publisher {
+            margin-top: 1%;
+            color: #696969;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #results {
+    #results-container {
+      width: 75%;
+      margin: 0 auto;
+      .book-container {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  #results {
+    #results-container {
+      width: 90%;
+      margin: 0 auto;
+      .book-container {
+        width: 100%;
+      }
+    }
+  }
+}

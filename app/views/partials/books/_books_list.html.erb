@@ -2,13 +2,17 @@
   <% if @search_results %>
 
     <% @search_results.each do |book| %>
-      <% img = book["imageLinks"]["thumbnail"] if book["imageLinks"] %>
-      <div>
-        <img class="thumbnail" src=<%= img %> >
-        <h2 class="title"><%= book["title"] %></h2>
-        <h4 class="authors"><%= book["authors"].join(", ") if book["authors"] %></h4>
-        <h5 class="publisher"><%= book["publisher"]%></h5>
-        <h5 class="info-link"><a href=<%= book["infoLink"]%>>Learn More</a></h5>
+      <% img_url = book["imageLinks"] ? book["imageLinks"]["thumbnail"] : "book-error.png" %>
+      <div onclick="window.open(`<%= book["infoLink"] %>`, '_blank');" class="book-container">
+        <div class="img-container column">
+          <%= image_tag img_url %>
+        </div>
+        <div class="book-info-container column">
+          <h4 class="title"><%= book["title"] %></h2>
+          <h4 class="authors"><%= book["authors"].join(", ") if book["authors"] %></h4>
+          <h4 class="publisher"><%= book["publisher"]%></h5>
+        </div>
+
       </div>
     <% end %>
   <% end %>
