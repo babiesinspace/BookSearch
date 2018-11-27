@@ -1,4 +1,4 @@
-This is a simple app that I made to search through the Google Books API.
+This is a simple app that I made to search through the Google Books API [(find me here!)](https://ac-booksearch.herokuapp.com/).
 
 This application should allow you to:
 * Type in a query and display a list of books matching that query.
